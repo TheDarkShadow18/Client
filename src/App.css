@@ -1,31 +1,45 @@
-
-*{
+* {
   box-sizing: border-box;
 }
-body{
+
+body {
   background-color: #f5f6ff;
+  font-family: 'Arial', sans-serif; /* Clean font */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
-.container{
-  padding: 10px;
-  /* background-color: red; */
-  max-width: fit-content;
-  margin: 50px auto;
+
+.container {
+  padding: 20px; /* Increased padding for better spacing */
+  max-width: 800px; /* Set a max-width for the container */
+  margin: 50px auto; /* Center the container */
+  background-color: white; /* Add a background to the container */
+  border-radius: 8px; /* Add rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
 }
-.btn{
+
+.btn {
   border: none;
-  padding: 7px 15px;
+  padding: 10px 20px; /* Increased padding for buttons */
   font-size: 18px;
   border-radius: 5px;
   cursor: pointer;
-  
+  transition: background-color 0.3s, transform 0.2s; /* Add transition for hover effects */
 }
-.btn-add{
-  background: #194064;
+
+.btn-add {
+  background: #007bff; /* More vibrant blue */
   color: white;
 }
-.addContainer{
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.2);
+
+.btn-add:hover {
+  background: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Lift effect */
+}
+
+.addContainer {
+  position: fixed; /* Fixed position for overlay */
+  background-color: rgba(0, 0, 0, 0.5); /* Darker overlay */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,81 +47,135 @@ body{
   right: 0;
   top: 0;
   bottom: 0;
+  z-index: 100; /* Ensure it overlays above other elements */
 }
 
-.addContainer form{
-  width: 420px;
+.addContainer form {
+  width: 400px; /* Slightly smaller form */
   background-color: white;
   display: flex;
   flex-direction: column;
-  padding: 50px 40px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
+  padding: 40px 30px; /* Adjusted padding */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow */
 }
-.addContainer form label{
+
+.addContainer form label {
   font-size: 18px;
+  margin-bottom: 5px; /* Add space below labels */
 }
-.addContainer form input{
+
+.addContainer form input {
   font-size: 18px;
-  padding: 5px;
+  padding: 10px; /* Increased padding for inputs */
   margin-top: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 15px; /* Increased space below inputs */
+  border: 1px solid #ccc; /* Border for inputs */
+  border-radius: 5px; /* Rounded corners for inputs */
+  transition: border 0.3s; /* Transition for input focus */
 }
-.addContainer form button{
+
+.addContainer form input:focus {
+  border-color: #007bff; /* Blue border on focus */
+  outline: none; /* Remove default outline */
+}
+
+.addContainer form button {
   background-color: royalblue;
   color: white;
   font-weight: 500;
   margin-top: 20px;
+  padding: 10px; /* Adjusted padding for buttons */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s; /* Transition for button hover */
 }
 
-.close-btn{
+.addContainer form button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.close-btn {
   margin-left: auto;
   font-size: 18px;
-  width: 20px;
-  height: 20px;
+  width: 25px; /* Slightly larger close button */
+  height: 25px; /* Slightly larger close button */
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 20px;
-  border: 1px solid #000;
+  border-radius: 50%; /* Circular close button */
+  border: 1px solid #007bff; /* Blue border */
+  background-color: white; /* White background */
   cursor: pointer;
-
+  transition: background-color 0.3s, transform 0.2s; /* Transition for hover */
 }
 
-.tableContainer{
+.close-btn:hover {
+  background-color: #e7f0ff; /* Light blue on hover */
+  transform: translateY(-2px); /* Lift effect */
+}
+
+.tableContainer {
   margin-top: 50px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
-.tableContainer table thead tr{
-  background-color: #f0eaea;
+
+.tableContainer table {
+  width: 100%; /* Full width table */
+  border-collapse: collapse; /* Remove space between cells */
 }
+
+.tableContainer table thead tr {
+  background-color: #007bff; /* Header background */
+  color: white; /* Header text color */
+}
+
 .tableContainer table thead tr th,
-.tableContainer table tbody tr th{
-  min-width: 200px;
-  padding: 7px;
+.tableContainer table tbody tr th {
+  padding: 10px; /* Increased padding for headers */
   text-align: center;
 }
 
-.tableContainer table tbody tr td{
-  text-align: center;
+.tableContainer table tbody tr {
+  border: 1px solid #ccc; /* Border for rows */
 }
 
-.tableContainer table tbody tr{
-  border: 1px solid #c9c5c2;
+.tableContainer table tbody tr td {
+  text-align: center;
+  padding: 10px; /* Increased padding for cells */
+  border-bottom: 1px solid #f0f0f0; /* Subtle bottom border */
 }
-.tableContainer table tbody tr td{
-  border-radius: 5px;
+
+.tableContainer table tbody tr:hover {
+  background-color: #f7f7f7; /* Highlight row on hover */
 }
-.btn-edit, .btn-delete{
-  margin: 0px 10px;
-  padding: 5px 10px;
+
+.btn-edit,
+.btn-delete {
+  margin: 0px 10px; /* Space between buttons */
+  padding: 5px 15px; /* Increased padding for buttons */
   font-size: 16px;
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s, transform 0.2s; /* Transition for hover */
 }
-.btn-edit{
-  background-color: yellow;
+
+.btn-edit {
+  background-color: #ffc107; /* Yellow for edit button */
+  color: black; /* Black text for contrast */
 }
-.btn-delete{
-  background-color: red;
+
+.btn-edit:hover {
+  background-color: #e0a800; /* Darker yellow on hover */
+  transform: translateY(-2px); /* Lift effect */
+}
+
+.btn-delete {
+  background-color: #dc3545; /* Red for delete button */
   color: white;
+}
+
+.btn-delete:hover {
+  background-color: #c82333; /* Darker red on hover */
+  transform: translateY(-2px); /* Lift effect */
 }
